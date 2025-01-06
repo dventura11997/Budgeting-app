@@ -95,9 +95,12 @@ def mon_in_out():
                  }
     )
 
-    now = datetime.now()
-    cur_ym = now.strftime("%Y-%m")
-    
+    #Get the current month
+    #now = datetime.now()
+    #cur_ym = now.strftime("%Y-%m")
+    #Hardcoded month to ensure there's card value without updating data
+    cur_ym = "2025-10"
+
     curm_in = df_ie[(df_ie['YearMonth'] == cur_ym) & (df_ie['Category'] == 'Income')]['Amount'].sum()
     curm_out = df_ie[(df_ie['YearMonth'] == cur_ym) & (df_ie['Category'] == 'Expense')]['Amount'].sum()
     net_income = round((curm_in - curm_out), 2)
