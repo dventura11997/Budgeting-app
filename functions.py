@@ -1,11 +1,24 @@
 import pandas as pd
+import requests
 from datetime import datetime
 import plotly.express as px
 import streamlit as st
+from io import BytesIO
 
 #This is a function to read in the data
 def read_data():
-    df = pd.read_excel('C:/Users/danie/OneDrive/Work/Career/Coding/Folio/Budgeting app/data/Reporting/budgeting_data_rep_8_11_2024.xlsx')
+    #df = pd.read_excel('C:/Users/danie/OneDrive/Work/Career/Coding/Folio/Budgeting app/data/Reporting/budgeting_data_rep_8_11_2024.xlsx')
+    url = "https://github.com/dventura11997/Budgeting-app/raw/refs/heads/main/data/Reporting/budgeting_data_rep_8_11_2024.xlsx"
+
+    # Fetch the file content from the URL
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Load the Excel file into a DataFrame
+        df = pd.read_excel(BytesIO(response.content))
+        print(df)  # Or use st.write(df) in Streamlit
+    else:
+        print(f"Error: Unable to fetch the file. Status code: {response.status_code}")
 
     # Return the DataFrame
     return df
