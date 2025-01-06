@@ -1,0 +1,49 @@
+body {
+  background-color: #F5F5F5; /*Ubank colours: #0eedc7, #190079,  #6212e6*/
+  margin: 5%;
+}
+.major-heading {
+  font-family: 'Libre Bodoni', sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  text-align: center;
+  color: #190079;
+  padding: 30px;
+  letter-spacing: 2px;
+}
+.header-container {
+  width: auto;
+  text-align: center;
+  padding: 20px;
+}
+.card-grid {
+  display: grid;                     
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 25px;
+  padding: 15px;
+}
+.pay-card-grid {
+  display: grid;                     
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 25px;
+  padding: 15px;
+}
+.card {
+  border-radius: 5px;
+  background-color: #6212e6;        
+  margin: 15px;                     
+  padding: 20px;                    
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+  font-size: 18px;                 
+  text-align: center;               
+  color: #ffffff;
+  font-family: 'Fredoka';                   
+}
+.card-heading {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Fredoka';
+  color: #ffffff;                   
+}
